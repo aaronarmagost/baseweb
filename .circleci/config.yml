@@ -13,19 +13,21 @@ examples:
       orbs:
         microscanner: aquasecurity/microscanner@dev:0.1.1
       jobs:
-        docker-build:
-          executor: microscanner/default
+        build:
+          docker: 
+            - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
           steps:
-            - checkout
-            - run: docker pull alpine:lastest
+            - checkout # check out the code in the project directory
+            - run: echo "hello world" # run the `echo` command
+
 
       workflows:
         scan-image:
           jobs:
-            - docker-build
+            - build
             - microscanner/scan-image:
                 requires: 
-                  - docker-build
+                  - build
                 context: myContext
                 image: alpine:lastest
 
