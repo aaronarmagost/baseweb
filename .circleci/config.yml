@@ -6,7 +6,7 @@ jobs:
     executor: microscanner/default
     steps:
       - checkout
-      - run: 'docker pull alpine:latest .'
+      - run: 'docker pull alpine:latest'
 workflows:
   scan-image:
     jobs:
