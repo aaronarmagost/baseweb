@@ -24,10 +24,10 @@ examples:
       workflows:
         scan-image:
           jobs:
-            - build
+            - build:
             - microscanner/scan-image:
                 requires: 
-                  - build
+                  - build:
                 context: myContext
                 image: alpine:lastest
 
