@@ -14,5 +14,5 @@ workflows:
       - microscanner/scan-image:
           requires:
             - docker-build
-          context: myContext
+#          context: myContext
           image: 'alpine:latest'
