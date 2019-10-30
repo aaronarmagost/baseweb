@@ -1,7 +1,3 @@
-# This code is licensed from CircleCI to the user under the MIT license. See
-# https://circleci.com/orbs/registry/licensing for details.
-version: 2.1
-
 description: |
   This orb creates a wrapper for the Aqua Security MicroScanner. This tool is freely available on GitHub.
 examples:
@@ -19,8 +15,6 @@ examples:
           steps:
             - checkout # check out the code in the project directory
             - run: echo "hello world" # run the `echo` command
-
-
       workflows:
         scan-image:
           jobs:
