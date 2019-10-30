@@ -17,7 +17,7 @@ examples:
           executor: microscanner/default
           steps:
             - checkout
-            - run: docker build -t myrepo/myimage:tag .
+            - run: docker pull alpine:lastest
 
       workflows:
         scan-image:
@@ -27,7 +27,7 @@ examples:
                 requires: 
                   - docker-build
                 context: myContext
-                image: myrepo/myimage:mytag
+                image: alpine:lastest
 
 executors:
   default:
